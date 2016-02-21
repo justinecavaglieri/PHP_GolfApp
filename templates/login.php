@@ -7,7 +7,6 @@
     <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet">
     <link href="css/style.css" rel="stylesheet">
-    <script type="text/javascript" src="script.js"></script>
 
 </head>
 

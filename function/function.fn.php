@@ -22,12 +22,12 @@ function userConnection(PDO $db, $pseudo, $password){
 function userRegistration(PDO $db, $pseudo, $password, $HCP){
     $verifPseudo = isPseudoAvailable($db, $pseudo);
     if($verifPseudo == true){
-        $sql = "INSERT INTO golf_users SET pseudo, password, HCP";
+        $sql = "INSERT INTO golf_users SET pseudo = :psd, password = :pass, HCP = :HCP";
         $req = $db->prepare($sql);
         $req->execute(array(
-            'pseudo' => $pseudo,
-            'password' => $password,
-            'HCP' => $HCP
+            ':psd' => $pseudo,
+            ':pass' => $password,
+            ':HCP' => $HCP
             ));
         return true;
     } else{
@@ -44,7 +44,7 @@ function isPseudoAvailable(PDO $db, $pseudo){
     $result = $req->fetch();
     if($result['count'] > 0){
         return false;
-    } else{
+    }else{
         return true;
     }
 }       
